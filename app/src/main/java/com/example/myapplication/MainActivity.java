@@ -28,13 +28,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void funcion (View view){
-        if (number.getText().toString()!="") {
+    public void addElement(View view) {
+
+        try {
+
             int numero = Integer.parseInt(number.getText().toString());
             lista.agregarAlFinal(numero);
             helloWorld.setText(lista.listarString());
             number.setText("");
 
+        } catch (Exception e) {
+            helloWorld.setText(lista.listarString() + "\n\nPara agregar otro valor, debe ingresar un número");
         }
     }
+
+    public void delElement(View view) {
+        try {
+            if (number.getText().toString() == "") {
+                helloWorld.setText(lista.listarString() + "\n\nNo se pudo eliminar ese elemento");
+            } else {
+                int numero = Integer.parseInt(number.getText().toString());
+                lista.eliminarNodo(numero);
+                helloWorld.setText(lista.listarString());
+                number.setText("");
+            }
+        } catch (Exception e){
+            helloWorld.setText(lista.listarString() + "\n\nNo se pudo eliminar ese elemento");
+        }
+    }
+
+
 }

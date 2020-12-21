@@ -92,20 +92,33 @@ public class DoubleLinkedList {
         Nodo aux = first;
         boolean indicador = true;
 
-        while (indicador) {
-            aux = aux.getNext();
-
-            if (aux.getNext().getValor() == valor) {
-                Nodo nuevoSiguiente = aux.getNext().getNext();
-
-                aux.setNext(nuevoSiguiente);
-                nuevoSiguiente.setPrev(aux);
-
-                indicador = false;
-                lenght--;
-                break;
+        if (lenght == 1 || aux.getValor()==valor) {
+            if (aux.getValor()==valor) {
+                first = first.getNext();
+                first.setPrev(null);
             }
+        } else {
 
+            while (indicador) {
+                aux = aux.getNext();
+
+                if (aux.getNext().getValor() == valor) {
+                    Nodo nuevoSiguiente = aux.getNext().getNext();
+
+                    aux.setNext(nuevoSiguiente);
+                    nuevoSiguiente.setPrev(aux);
+
+                    indicador = false;
+                    lenght--;
+                    break;
+                }
+
+                if (aux.getNext() == null) {
+                    indicador = false;
+                    break;
+                }
+
+            }
         }
     }
 

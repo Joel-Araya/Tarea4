@@ -5,21 +5,29 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity" android:background="#E81A3B97">
     <TextView
             android:text="Hola mundo"
             android:layout_width="315dp"
             android:layout_height="108dp" android:id="@+id/helloWorld"
             android:gravity="center" android:layout_marginEnd="40dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="524dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="40dp"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="40dp"
+            android:backgroundTint="#7988CF" android:foregroundTint="#8A8181" android:background="#909BBF"/>
     <Button
             android:text="Agregar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/buttonAgregar"
-            android:layout_marginEnd="160dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="328dp"
-            android:onClick="funcion"/>
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="332dp"
+            android:onClick="addElement" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="96dp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEliminar" android:layout_marginEnd="43dp"/>
+    <Button
+            android:text="Eliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/buttonEliminar"
+            android:layout_marginEnd="96dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="332dp"
+            android:onClick="delElement"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,5 +35,6 @@
             android:ems="10"
             android:id="@+id/numero"
             android:layout_marginEnd="96dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="44dp" app:layout_constraintBottom_toTopOf="@+id/buttonAgregar"/>
+            android:layout_marginBottom="36dp" app:layout_constraintBottom_toTopOf="@+id/buttonAgregar"
+            android:backgroundTint="#FFFFFF"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
